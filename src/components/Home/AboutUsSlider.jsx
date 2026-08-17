@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { motion } from "framer-motion"
-
+import { motion } from "framer-motion";
 
 // Import Swiper styles
 import "swiper/css";
@@ -45,8 +44,8 @@ export default function AboutUsSlider() {
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
         autoplay={{
-          "delay": 2000,
-          "disableOnInteraction": false
+          delay: 2000,
+          disableOnInteraction: false,
         }}
         className="mySwiper about-home-slider h-[400px] max-xl:h-[250px]"
       >
@@ -62,7 +61,7 @@ export default function AboutUsSlider() {
                     className="size-full object-cover xl:rounded-tl-[286px] xl:rounded-bl-[62px]"
                   />
                   <div className="size-full xl:rounded-tl-[286px] xl:rounded-bl-[62px] absolute top-0 left-0 z-10 opacity-70 bg-gradient-to-t from-[#C6ABCE] to-[#814494]"></div>
-                  <div className="size-full rounded-tl-[286px] rounded-bl-[62px] flex flex-col gap-4 items-center justify-center absolute top-0 left-0 z-[20]">
+                  {/* <div className="size-full rounded-tl-[286px] rounded-bl-[62px] flex flex-col gap-4 p-5 items-start justify-center absolute top-0 left-0 z-[20]">
                     <FontAwesomeIcon
                       className="text-white text-5xl"
                       icon={faQuoteRight}
@@ -70,7 +69,7 @@ export default function AboutUsSlider() {
                     <p className="text-4xl text-white text-center left-9 font-semibold">
                       {slide?.title}
                     </p>
-                  </div>
+                  </div> */}
                 </div>
                 <img
                   className="w-[18%] max-xl:hidden object-cover rounded-l-full absolute left-[6%] top-1/2 z-[15] translate-y-[-50%]"
