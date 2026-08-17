@@ -19,7 +19,7 @@ export default function OurPartnersSlider() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPartnersHome('limit=7'));
+    dispatch(getPartnersHome("limit=7"));
   }, []);
 
   useEffect(() => {
@@ -43,8 +43,8 @@ export default function OurPartnersSlider() {
         modules={[Navigation, Pagination, Autoplay]}
         navigation={true}
         autoplay={{
-          "delay": 2500,
-          "disableOnInteraction": true
+          delay: 2500,
+          disableOnInteraction: true,
         }}
         pagination={{ clickable: true }}
         breakpoints={{
@@ -84,19 +84,23 @@ export default function OurPartnersSlider() {
             />
           </>
         ) : null}
-        {PartnersList?.map((partner) => (
+        {PartnersList?.slice(0, 6).map((partner) => (
           <SwiperSlide key={partner?.id}>
             <div>
-              <a href={partner?.url} target="_blank" className="w-fit pt-5 bg-white flex flex-col items-center justify-center rounded-2xl rounded-bl-none border-[8px] border-slate-100 duration-200 prize-card">
-              <img
-                width={200}
-                src={partner?.logo}
-                alt="prize"
-                className="size-[150px] object-contain rounded-md grayscale"
-              />
-              <h5 className="w-full invisible text-center py-1 text-xl text-white bg-mainColor font-semibold description1">
-                {partner?.name}
-              </h5>
+              <a
+                href={partner?.url}
+                target="_blank"
+                className="w-fit pt-5 bg-white flex flex-col items-center justify-center rounded-2xl rounded-bl-none border-[8px] border-slate-100 duration-200 prize-card"
+              >
+                <img
+                  width={200}
+                  src={partner?.logo}
+                  alt="prize"
+                  className="size-[150px] object-contain rounded-md grayscale"
+                />
+                <h5 className="w-full invisible text-center py-1 text-xl text-white bg-mainColor font-semibold description1">
+                  {partner?.name}
+                </h5>
               </a>
             </div>
           </SwiperSlide>

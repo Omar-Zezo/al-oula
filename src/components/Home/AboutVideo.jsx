@@ -159,7 +159,7 @@ const AboutVideo = ({ langDetection }) => {
 `}</style>
           </div>
 
-          <div className="w-[90%] h-[86%] absolute left-1/2 xl:bottom-[82px] bottom-[62px] translate-x-[-50%] z-10">
+          <div className="w-[90%] h-[86%] absolute left-1/2 xl:bottom-[102px] bottom-[62px] translate-x-[-50%] z-10">
             <div className="size-full relative rounded-t-[50px]">
               <div className="size-full bg-gradient-to-r from-[#814494] to-[#C6ABCE] rounded-t-[50px]">
                 <ReactPlayer

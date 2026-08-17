@@ -11,8 +11,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import NewsCard from "../Cards/NewsCard";
 
-export default function NewsSlider({news}) {
-  
+export default function NewsSlider({ news }) {
   return (
     <div>
       <Swiper
@@ -22,8 +21,8 @@ export default function NewsSlider({news}) {
         modules={[Navigation, Pagination, Autoplay]}
         pagination={{ clickable: true }}
         autoplay={{
-          "delay": 2500,
-          "disableOnInteraction": false
+          delay: 2500,
+          disableOnInteraction: false,
         }}
         navigation={false}
         breakpoints={{
@@ -49,9 +48,9 @@ export default function NewsSlider({news}) {
           },
         }}
       >
-        {news?.map((art) => (
+        {news?.slice(0, 6).map((art) => (
           <SwiperSlide key={art?.id}>
-            <NewsCard key={art?.id} art={art}/>
+            <NewsCard key={art?.id} art={art} />
           </SwiperSlide>
         ))}
       </Swiper>

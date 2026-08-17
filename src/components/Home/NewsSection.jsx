@@ -37,7 +37,7 @@ const NewsSection = () => {
         const entry = entries[0];
         setInView(entry.isIntersecting);
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     if (ref.current) {
@@ -53,10 +53,10 @@ const NewsSection = () => {
 
   return news?.length > 0 ? (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: inView ? 1 : 0 }}
-      transition={{ duration: 1 }}
+      // ref={ref}
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: inView ? 1 : 0 }}
+      // transition={{ duration: 1 }}
       className="mt-20 h-[600px] relative"
     >
       <div className="flex flex-col mt-10 items-center absolute top-0 left-1/2 translate-x-[-50%]">

@@ -26,11 +26,11 @@ const Navbar = ({ setShowLogin, loggedUserInfo, settings, langDetection }) => {
 
   const dispatch = useDispatch();
 
-  const {pathname} = useLocation()
+  const { pathname } = useLocation();
 
-  useEffect(()=>{
-    setShowUserMenu(false)
-  },[pathname])
+  useEffect(() => {
+    setShowUserMenu(false);
+  }, [pathname]);
 
   const token = localStorage.getItem("token");
 
@@ -181,11 +181,13 @@ const Navbar = ({ setShowLogin, loggedUserInfo, settings, langDetection }) => {
                               >
                                 <Link
                                   onClick={(e) => {
-                                    link?.sub_pages.length > 0 && e.preventDefault();
+                                    link?.sub_pages.length > 0 &&
+                                      e.preventDefault();
                                     link?.key === "donation_gift" &&
                                       token === null &&
                                       (e.preventDefault(), setShowLogin(true));
-                                      link.sub_pages.length === 0 && handelHiddenOClick();
+                                    link.sub_pages.length === 0 &&
+                                      handelHiddenOClick();
                                   }}
                                   to={`/pages/${link?.key}`}
                                   className={`${
@@ -271,11 +273,13 @@ const Navbar = ({ setShowLogin, loggedUserInfo, settings, langDetection }) => {
                               >
                                 <Link
                                   onClick={(e) => {
-                                    link?.sub_pages.length > 0 && e.preventDefault();
+                                    link?.sub_pages.length > 0 &&
+                                      e.preventDefault();
                                     link?.key === "donation_gift" &&
                                       token === null &&
                                       (e.preventDefault(), setShowLogin(true));
-                                      link.sub_pages.length === 0 && handelHiddenOClick();
+                                    link.sub_pages.length === 0 &&
+                                      handelHiddenOClick();
                                   }}
                                   to={`/pages/${link?.key}`}
                                   className={`${
@@ -334,14 +338,19 @@ const Navbar = ({ setShowLogin, loggedUserInfo, settings, langDetection }) => {
                         } top-[34px] z-10`}
                       >
                         {navbarLinks?.slice(3)?.map((item) => (
-                          <li key={item?.id} className="other-links-sub">
+                          <li
+                            key={item?.id}
+                            className="other-links-sub relative"
+                          >
                             <Link
                               onClick={(e) => {
-                                item?.sub_pages.length > 0 && e.preventDefault();
+                                item?.sub_pages.length > 0 &&
+                                  e.preventDefault();
                                 item?.key === "donation_gift" &&
                                   token === null &&
                                   (e.preventDefault(), setShowLogin(true));
-                                  item.sub_pages.length === 0 && handelHiddenOClick();
+                                item.sub_pages.length === 0 &&
+                                  handelHiddenOClick();
                               }}
                               className={`${
                                 hiddenOnClick ? "hidden" : "flex"
@@ -376,12 +385,14 @@ const Navbar = ({ setShowLogin, loggedUserInfo, settings, langDetection }) => {
                                   <li key={link?.id}>
                                     <Link
                                       onClick={(e) => {
-                                        link?.sub_pages.length > 0 && e.preventDefault();
+                                        link?.sub_pages.length > 0 &&
+                                          e.preventDefault();
                                         link?.key === "donation_gift" &&
                                           token === null &&
                                           (e.preventDefault(),
                                           setShowLogin(true));
-                                          link.sub_pages.length === 0 && handelHiddenOClick();
+                                        link.sub_pages.length === 0 &&
+                                          handelHiddenOClick();
                                       }}
                                       className={`${
                                         hiddenOnClick ? "hidden" : "flex"
@@ -413,14 +424,15 @@ const Navbar = ({ setShowLogin, loggedUserInfo, settings, langDetection }) => {
                       } top-[34px] z-10`}
                     >
                       {navbarLinks?.slice(4)?.map((item) => (
-                        <li key={item?.id} className="other-links-sub">
+                        <li key={item?.id} className="other-links-sub relative">
                           <Link
                             onClick={(e) => {
                               item?.sub_pages.length > 0 && e.preventDefault();
                               item?.key === "donation_gift" &&
                                 token === null &&
                                 (e.preventDefault(), setShowLogin(true));
-                                item.sub_pages.length === 0 && handelHiddenOClick();
+                              item.sub_pages.length === 0 &&
+                                handelHiddenOClick();
                             }}
                             className={`${
                               hiddenOnClick ? "hidden" : "flex"
@@ -455,12 +467,14 @@ const Navbar = ({ setShowLogin, loggedUserInfo, settings, langDetection }) => {
                                 <li key={link?.id}>
                                   <Link
                                     onClick={(e) => {
-                                      link?.sub_pages.length > 0 && e.preventDefault();
+                                      link?.sub_pages.length > 0 &&
+                                        e.preventDefault();
                                       link?.key === "donation_gift" &&
                                         token === null &&
                                         (e.preventDefault(),
                                         setShowLogin(true));
-                                        link.sub_pages.length === 0 && handelHiddenOClick();
+                                      link.sub_pages.length === 0 &&
+                                        handelHiddenOClick();
                                     }}
                                     className={`${
                                       hiddenOnClick ? "hidden" : "flex"
@@ -508,15 +522,15 @@ const Navbar = ({ setShowLogin, loggedUserInfo, settings, langDetection }) => {
                     {loggedUserInfo?.phone}
                   </p>
                   <ul
-                    className={`${langDetection === "en" ? 'w-[200px] rounded-tl-none':'w-[175px] rounded-tr-none'} ${
+                    className={`${langDetection === "en" ? "w-[200px] rounded-tl-none" : "w-[175px] rounded-tr-none"} ${
                       showUserMenu ? "flex" : "hidden"
                     } flex flex-col gap-2 ${
                       stickyNav
                         ? "bg-white text-mainColor"
                         : langDetection === "en"
-                        ? "bg-[#C6ABCE] text-mainColor"
-                        : "bg-mainColor text-white"
-                    } rounded-lg absolute ${langDetection === "en" ? 'left-0':'right-0'} bottom-[-100px]`}
+                          ? "bg-[#C6ABCE] text-mainColor"
+                          : "bg-mainColor text-white"
+                    } rounded-lg absolute ${langDetection === "en" ? "left-0" : "right-0"} bottom-[-100px]`}
                   >
                     <li>
                       <Link
@@ -543,7 +557,7 @@ const Navbar = ({ setShowLogin, loggedUserInfo, settings, langDetection }) => {
                           className="text-lg"
                           icon={faArrowRightFromBracket}
                         />
-                        {t('logout')}
+                        {t("logout")}
                       </div>
                     </li>
                   </ul>
